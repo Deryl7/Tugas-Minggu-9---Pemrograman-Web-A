@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Web - Cara Kerja Internet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Cara Kerja Internet</h1>
+    </header>
+
+    <!-- Navigasi -->
+    <nav>
+        <a href="#umum">Internet Umum</a>
+        <a href="#http">HTTP/HTTPS</a>
+        <a href="#domain">Domain</a>
+        <a href="#hosting">Hosting</a>
+        <a href="#dns">DNS</a>
+        <a href="#browser">Browser</a>
+    </nav>
+
+    <div class="container">
+        <main>
+            <!-- Cara Kerja Internet Umum -->
+            <section id="umum">
+                <h2>1. Cara Kerja Internet Secara Umum</h2>
+                <p>Internet (Interconnected Network) adalah jaringan komputer global yang menghubungkan miliaran perangkat. Cara kerjanya menggunakan teknik bernama <strong>packet switching</strong>.</p>
+                <p>Saat kamu mengirim data (misal: email), data itu dipecah jadi bagian-bagian kecil bernama <strong>paket (packets)</strong>. Setiap paket diberi alamat tujuan (alamat IP) dan berjalan melintasi jaringan, "melompat" dari satu router ke router berikutnya, mencari rute tercepat. Setelah semua paket tiba di tujuan, perangkat penerima menyatukannya kembali.</p>
+                <p>Proses ini diatur oleh protokol <strong>TCP/IP</strong> (Transmission Control Protocol/Internet Protocol). IP bertugas memberi alamat, dan TCP memastikan semua paket sampai dengan selamat dan utuh.</p>
+
+                <img src="Packet-Switching.png" alt="Packet Switching Diagram">
+
+                <details>
+                    <summary>Sumber Referensi</summary>
+                    <p>Cloudflare. (2024). <em>What is the Internet?</em></p>
+                    <p>Mozilla Developer Network (MDN). (2024). <em>How does the Internet work?</em></p>
+                </details>
+            </section>
+
+            <!-- HTTP dan HTTPS -->
+            <section id="http">
+                <h2>2. Definisi dan Cara Kerja HTTP & HTTPS</h2>
+                <p><strong>HTTP (Hypertext Transfer Protocol)</strong> adalah "bahasa" atau protokol yang digunakan browser untuk "berbicara" dengan server web. Saat kamu mengunjungi situs, browser mengirim *HTTP Request* (permintaan) ke server, dan server membalas dengan *HTTP Response* (tanggapan) yang berisi file HTML, CSS, dll.</p>
+                <p><strong>HTTPS (Hypertext Transfer Protocol Secure)</strong> adalah versi aman dari HTTP. Bedanya, HTTPS menggunakan <strong>enkripsi SSL/TLS</strong> untuk mengamankan koneksi.</p>
+                <p>Cara kerja HTTPS: Sebelum mengirim data, browser dan server melakukan "jabat tangan SSL" untuk memverifikasi identitas server dan menyetujui "kunci" rahasia. Semua data yang dikirim kemudian dienkripsi menggunakan kunci itu. Jadi, jika ada yang mengintip, mereka hanya melihat data acak yang tidak bisa dibaca.</p>
+
+                <img src="http-vs-https.png" alt="HTTP vs HTTPS Diagram">
+
+                <details>
+                    <summary>Sumber Referensi</summary>
+                    <p>Cloudflare. (2024). <em>What is HTTP?</em></p>
+                    <p>Google Cloud. (2024). <em>What is HTTPS?</em></p>
+                </details>
+            </section>
+
+            <!-- Nama Domain -->
+            <section id="domain">
+                <h2>3. Definisi dan Cara Kerja Nama Domain</h2>
+                <p><strong>Nama Domain</strong> (misal: <code>google.com</code>) adalah alamat unik yang mudah diingat manusia untuk menemukan situs web. Ini adalah "nama panggilan" untuk alamat IP server yang rumit (misal: <code>142.250.190.78</code>).</p>
+                <p>Cara kerjanya bergantung pada DNS (Domain Name System). Pemilik situs mendaftarkan domain, lalu "menautkannya" ke alamat IP server hosting mereka. Saat kamu mengetik nama domain di browser, browser akan bertanya ke sistem DNS untuk menerjemahkan nama domain itu menjadi alamat IP. Setelah dapat IP-nya, browser baru bisa terhubung ke server.</p>
+
+                <img src="domain.jpg" alt="Domain Name System Diagram">
+
+                <details>
+                    <summary>Sumber Referensi</summary>
+                    <p>Cloudflare. (2024). <em>What is a domain name?</em></p>
+                    <p>ICANN. (2024). <em>How Domain Names Work.</em></p>
+                </details>
+            </section>
+
+            <!-- Hosting -->
+            <section id="hosting">
+                <h2>4. Definisi dan Cara Kerja Hosting</h2>
+                <p><strong>Hosting (Web Hosting)</strong> adalah layanan penyewaan ruang di server fisik untuk menyimpan semua file situs web (HTML, CSS, gambar, database). Server ini adalah komputer kuat yang terhubung ke internet 24/7.</p>
+                <p>Bayangkan jika situs web adalah rumah, maka hosting adalah tanah tempat rumah itu berdiri, dan nama domain adalah alamat rumahnya.</p>
+                <p>Cara kerjanya: Kamu mengunggah file web-mu ke server hosting. Ketika seseorang mengunjungi domain-mu, DNS akan mengarahkan browser mereka ke alamat IP server hosting-mu. Server hosting kemudian menerima permintaan itu dan mengirimkan file-file situs web-mu kembali ke browser pengunjung.</p>
+
+                <img src="how-does-web-hosting-work.jpg" alt="How Does Web Hosting Work Diagram">
+
+                <details>
+                    <summary>Sumber Referensi</summary>
+                    <p>Mozilla Developer Network (MDN). (2024). <em>What is web hosting?</em></p>
+                    <p>Hostinger. (2024). <em>What Is Web Hosting?</em></p>
+                </details>
+            </section>
+
+            <!-- DNS -->
+            <section id="dns">
+                <h2>5. Definisi dan Cara Kerja DNS</h2>
+                <p><strong>DNS (Domain Name System)</strong> sering disebut sebagai "buku telepon internet". Ini adalah sistem global yang tugasnya menerjemahkan nama domain (<code>google.com</code>) menjadi alamat IP (<code>142.250.190.78</code>) yang dimengerti komputer.</p>
+                <p>Proses ini disebut <strong>DNS Lookup</strong>:</p>
+                <ol>
+                    <li>Kamu ketik <code>google.com</code> di browser.</li>
+                    <li>Browser bertanya ke <strong>DNS Resolver</strong> (dari ISP-mu).</li>
+                    <li>Resolver bertanya ke <strong>Root Server</strong>.</li>
+                    <li>Root Server mengarahkan ke <strong>TLD Server</strong> (yang mengurus <code>.com</code>).</li>
+                    <li>TLD Server mengarahkan ke <strong>Authoritative Nameserver</strong> (milik Google).</li>
+                    <li>Nameserver Google memberi tahu alamat IP-nya ke Resolver.</li>
+                    <li>Resolver memberi tahu alamat IP itu ke browser-mu.</li>
+                    <li>Browser terhubung ke alamat IP tersebut.</li>
+                </ol>
+
+                <img src="dns-lookup.png" alt="DNS Lookup Diagram">
+
+                <details>
+                    <summary>Sumber Referensi</summary>
+                    <p>Cloudflare. (2024). <em>What is DNS?</em></p>
+                    <p>Amazon Web Services (AWS). (2024). <em>What Is DNS?</em></p>
+                </details>
+            </section>
+
+            <!-- Browser -->
+            <section id="browser">
+                <h2>6. Definisi dan Cara Kerja Browser</h2>
+                <p><strong>Browser (Peramban Web)</strong> adalah aplikasi (seperti Chrome, Firefox, Safari) untuk mengambil, menyajikan, dan menjelajahi informasi di World Wide Web. Fungsi utamanya adalah menerjemahkan kode (HTML, CSS, JavaScript) menjadi halaman web visual yang interaktif.</p>
+                <p>Cara kerjanya (setelah mendapat IP dari DNS dan meminta data via HTTP):</p>
+                <ol>
+                    <li><strong>Parsing HTML:</strong> Browser membaca kode HTML untuk membangun struktur halaman (DOM Tree).</li>
+                    <li><strong>Parsing CSS:</strong> Browser membaca kode CSS untuk membangun struktur gaya (CSSOM Tree).</li>
+                    <li><strong>Render Tree:</strong> Browser menggabungkan DOM dan CSSOM untuk menentukan apa saja yang akan tampil.</li>
+                    <li><strong>Layout (Tata Letak):</strong> Browser menghitung posisi dan ukuran pasti setiap elemen di layar.</li>
+                    <li><strong>Painting (Menggambar):</strong> Browser "menggambar" piksel-piksel ke layar.</li>
+                </ol>
+                <p>Browser juga menjalankan kode <strong>JavaScript</strong>, yang bisa mengubah struktur (DOM) atau gaya (CSSOM) secara dinamis, yang kemudian memicu proses Layout dan Painting ulang.</p>
+
+                <img src="browser-rendering.png" alt="Browser Rendering Pipeline Diagram">
+
+                <details>
+                    <summary>Sumber Referensi</summary>
+                    <p>Mozilla Developer Network (MDN). (2024). <em>How browsers work.</em></p>
+                    <p>web.dev (by Google). (2024). <em>How the browser renders a web page.</em></p>
+                </details>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Dibuat untuk Tugas Mata Kuliah Pemrograman Web Kelas A</p>
+        <p>Oleh Deryl Dionedith Tammu - D121231048</p>
+    </footer>
+
+</body>
+</html>

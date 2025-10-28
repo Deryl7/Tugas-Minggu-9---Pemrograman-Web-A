@@ -1,0 +1,149 @@
+/* CSS Sederhana */
+        
+/* Reset dasar & Font */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    background-color: #f8f9fa; /* Latar belakang abu-abu muda */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Kontainer utama untuk membatasi lebar & mengatur di tengah */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+header {
+    background-color: #004a99; /* Biru tua */
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-bottom: 5px solid #003366;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Navigasi */
+nav {
+    background-color: #e9ecef; /* Abu-abu terang */
+    padding: 0.75rem 0;
+    text-align: center;
+    
+    /* Membuat navigasi tetap di atas (sticky) */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+    /* Bayangan tipis agar terlihat 'melayang' */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+    /* Mengatur link agar rapi */
+    display: flex;
+    flex-wrap: wrap; /* Jika tidak muat, akan turun ke bawah */
+    justify-content: center;
+    gap: 0.5rem; /* Jarak antar link */
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #004a99;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+nav a:hover, nav a:focus {
+    background-color: #004a99;
+    color: white;
+}
+
+/* Konten Utama */
+main {
+    padding: 2rem 0;
+}
+
+/* Tiap Bagian (Section) */
+section {
+    background-color: #ffffff; /* Putih */
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    
+    /* PENTING: Memberi jarak dari atas saat link di-klik,
+        agar tidak tertutup navigasi sticky */
+    scroll-margin-top: 6rem; /* Sesuaikan dengan tinggi nav + sedikit padding */
+}
+
+section h2 {
+    color: #003366; /* Biru lebih gelap */
+    border-bottom: 3px solid #e9ecef;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+/* Placeholder untuk gambar/diagram */
+.img-placeholder {
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    background-color: #f0f0f0;
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto;
+    font-style: italic;
+    color: #888;
+    border-radius: 8px;
+    text-align: center;
+}
+
+section img {
+    max-width: 100%; /* Ini membuat gambar tidak akan lebih lebar dari kotaknya */
+    height: auto;   /* Ini menjaga rasio aspek gambar agar tidak gepeng */
+    display: block; /* Membuat gambar jadi elemen block */
+    margin: 1.5rem auto; /* Memberi jarak atas/bawah & membuatnya di tengah */
+    border-radius: 8px; /* Memberi sudut melengkung */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Bayangan tipis seperti section */
+}
+
+/* Untuk Sumber Referensi */
+details {
+    margin-top: 1.5rem;
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 0.75rem 1.25rem;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: #555;
+}
+
+details p {
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 0.9em;
+    color: #777;
+}
